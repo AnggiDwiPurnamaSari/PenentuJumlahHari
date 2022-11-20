@@ -33,8 +33,8 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         userTF = new javax.swing.JTextField();
-        passwordTF = new javax.swing.JTextField();
         loginBT = new javax.swing.JButton();
+        pwF = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,11 +59,10 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(loginBT)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(userTF, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                        .addComponent(passwordTF)))
+                    .addComponent(userTF)
+                    .addComponent(pwF, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
                 .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
@@ -76,8 +75,8 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(passwordTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                    .addComponent(pwF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(loginBT)
                 .addGap(36, 36, 36))
         );
@@ -96,32 +95,28 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTActionPerformed
-        
-        if((userTF.getText().equals("admin")) &&
-            //(new String(passwordTF.getPassword()).equals("admin"))){
-              (String.valueOf(passwordTF.getText().equals("admin"))){
-            //PenentuJumlahHari pjh = new PenentuJumlahHari();
-            //pjh.setVisible(true);
-            new PenentuJumlahHari().setVisible(true);
-            dispose();
-        }else{
-            JOptionPane.showMessageDialog(
-                    null, 
-                    userTF.getText() +
-                    ", password anda salah ", 
-                    "Pesan Kesalahan",
-                    JOptionPane.ERROR_MESSAGE);
-            userTF.setText("");
-            passwordTF.setText("");
-            userTF.requestFocus();
-        }
+          // TODO add your handling code here: 
+        if("admin".equals(userTF.getText())){ 
+            if("admin".equals(pwF.getPassword())){ 
+                //code jika user dan password benar  
+                FormPenentuJumlahHari formHari = new FormPenentuJumlahHari(); 
+                formHari.setVisible(true); 
+                dispose(); 
+            }else{ 
+                 JOptionPane.showMessageDialog(rootPane, "Password anda salah",  
+                         "Password Tidak Sesuai", JOptionPane.ERROR_MESSAGE); 
+            } 
+        }else{ 
+            JOptionPane.showMessageDialog(rootPane, "Id User anda belum terdaftar",  
+                    "Id User Tidak Ditemukan", JOptionPane.ERROR_MESSAGE); 
+        } 
     }//GEN-LAST:event_loginBTActionPerformed
 
     /**
@@ -164,7 +159,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginBT;
-    private javax.swing.JTextField passwordTF;
+    private javax.swing.JPasswordField pwF;
     private javax.swing.JTextField userTF;
     // End of variables declaration//GEN-END:variables
 
