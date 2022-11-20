@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import javax.swing.JOptionPane;
 
 /**
@@ -129,6 +131,11 @@ public class PenentuJumlahHari extends javax.swing.JFrame {
         });
 
         simpanBTN.setText("Simpan");
+        simpanBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpanBTNActionPerformed(evt);
+            }
+        });
 
         keluarBTN.setText("Keluar");
         keluarBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +255,21 @@ public class PenentuJumlahHari extends javax.swing.JFrame {
     private void keluarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarBTNActionPerformed
         System.exit(0);
     }//GEN-LAST:event_keluarBTNActionPerformed
+
+    private void simpanBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanBTNActionPerformed
+        try{
+            // Buat file
+            BufferedWriter out = new BufferedWriter(new FileWriter("jumlahhari.txt"));
+            // Simpan ke file
+            out.write(jumlahhariLabel.getText());
+            // Tampilkan dialog bila berhasil
+            JOptionPane.showMessageDialog(null, "Berhasil Disimpan dalam File");
+            // Tutup output stream
+            out.close();
+        }catch (Exception e){//Catch exception is any
+            System.err.println("Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_simpanBTNActionPerformed
 
     /**
      * @param args the command line arguments
