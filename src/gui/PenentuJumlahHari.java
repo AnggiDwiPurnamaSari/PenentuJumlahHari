@@ -131,6 +131,11 @@ public class PenentuJumlahHari extends javax.swing.JFrame {
         simpanBTN.setText("Simpan");
 
         keluarBTN.setText("Keluar");
+        keluarBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                keluarBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -239,6 +244,10 @@ public class PenentuJumlahHari extends javax.swing.JFrame {
         tahunTF.setText("");
         bulanCBX.setSelectedItem("Januari");
     }//GEN-LAST:event_hapusBTNActionPerformed
+
+    private void keluarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarBTNActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_keluarBTNActionPerformed
 
     /**
      * @param args the command line arguments
