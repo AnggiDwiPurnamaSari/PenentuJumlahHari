@@ -122,6 +122,11 @@ public class PenentuJumlahHari extends javax.swing.JFrame {
         });
 
         hapusBTN.setText("Hapus");
+        hapusBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusBTNActionPerformed(evt);
+            }
+        });
 
         simpanBTN.setText("Simpan");
 
@@ -227,6 +232,13 @@ public class PenentuJumlahHari extends javax.swing.JFrame {
     private void bulanCBXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulanCBXActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bulanCBXActionPerformed
+
+    private void hapusBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusBTNActionPerformed
+        // TODO add your handling code here:
+        jumlahhariLabel.setText("");
+        tahunTF.setText("");
+        bulanCBX.setSelectedItem("Januari");
+    }//GEN-LAST:event_hapusBTNActionPerformed
 
     /**
      * @param args the command line arguments
