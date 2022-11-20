@@ -105,7 +105,7 @@ public class LoginForm extends javax.swing.JFrame {
     private void loginBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTActionPerformed
         
         if((userTF.getText().equals("admin")) &&
-            //(new String(passwordTF.getpassword()).equals("admin"))){
+            //(new String(passwordTF.getPassword()).equals("admin"))){
               (String.valueOf(passwordTF.getText().equals("admin"))){
             //PenentuJumlahHari pjh = new PenentuJumlahHari();
             //pjh.setVisible(true);
@@ -121,7 +121,7 @@ public class LoginForm extends javax.swing.JFrame {
             userTF.setText("");
             passwordTF.setText("");
             userTF.requestFocus();
-          }
+        }
     }//GEN-LAST:event_loginBTActionPerformed
 
     /**
